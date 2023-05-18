@@ -26,6 +26,7 @@ namespace webapi.Controllers
                 return Results.Problem(ex.Message);
             }
         }
+
         [HttpGet("id", Name ="GetUser")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IResult> GetUser(int id)
@@ -35,6 +36,22 @@ namespace webapi.Controllers
                 var person = _service.GetAll().Where(x => x.Id == id).FirstOrDefault();
                 if (person == null) return Results.NotFound();
                 return Results.Ok(person);
+
+            }
+            catch (Exception ex)
+            {
+                return Results.Problem(ex.Message);
+            }
+        }
+
+
+        [HttpDelete("{id}", Name ="DeleteUser")]
+        public async Task<IResult> DeleteUser(int id)
+        {
+            try
+            {
+                if (_service.DeleteUser(id)) return Results.Ok();
+                return Results.NotFound();
 
             }
             catch (Exception ex)

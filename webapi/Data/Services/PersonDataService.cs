@@ -41,6 +41,7 @@ namespace webapi.Data.Services
         }
         public bool DeleteUser(int id)
         {
+            if(_db.People.Any(x => x.Id==id)==false) return false;
             var itemToRemove = _db.People.Single(r => r.Id == id);
             return _db.People.Remove(itemToRemove);
         }
