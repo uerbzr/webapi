@@ -17,11 +17,11 @@ namespace webapi.Data.DataStore
 
         public void Seed()
         {
-            People.Add(new Person() { Id = 1, Name = "Nigel", Email = "admin@something.com" });
-            People.Add(new Person() { Id = 2, Name = "Bob", Email = "admin@something.com" });
-            People.Add(new Person() { Id = 3, Name = "Frank", Email = "admin@something.com" });
-            People.Add(new Person() { Id = 4, Name = "Jeff", Email = "admin@something.com" });
-            People.Add(new Person() { Id = 5, Name = "Carl", Email = "admin@something.com" });
+            People.Add(new Person() { Id = 1, Name = "Nigel", Email = "nigel@something.com" });
+            People.Add(new Person() { Id = 2, Name = "Bob", Email = "bob@something.com" });
+            People.Add(new Person() { Id = 3, Name = "Frank", Email = "frank@something.com" });
+            People.Add(new Person() { Id = 4, Name = "Jeff", Email = "jeff@something.com" });
+            People.Add(new Person() { Id = 5, Name = "Carl", Email = "carl@something.com" });
         }
         public List<IPerson> People { get { return _persons; } set { _persons = value; } }
 
