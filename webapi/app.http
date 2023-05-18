@@ -1,0 +1,43 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@hostname=localhost
+@port=7084
+@host={{hostname}}:{{port}}
+@url=https://localhost:{{port}}/staff
+###
+GET {{url}}
+###
+GET https://localhost:7084/staff
+###
+GET https://{{hostname}}:{{port}}/staff/100
+
+
+###
+POST https://localhost:7084/staff
+
+Content-Type: application/json
+
+{
+    "Id": 100,
+    "Name": "Ada Lovelace",
+    "Email": "ada@lovelace.com"
+}
+
+###
+
+PUT https://localhost:7084/staff/
+
+Content-Type: application/json
+
+{
+    "id": 10,
+    "name": "Ada Lovelace",
+    "email": "ada@lovelace.co.uk"
+}
+
+###
+DELETE https://localhost:7084/staff
+Content-Type application/json
+{
+    "Id": 1
+}
