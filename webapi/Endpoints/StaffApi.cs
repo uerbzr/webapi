@@ -1,19 +1,18 @@
-﻿using Microsoft.AspNetCore.Components.Web;
+﻿using Microsoft.AspNetCore.Builder;
 using webapi.Data.Services;
-using webapi.Interfaces;
 using webapi.Models;
 
 namespace webapi.Endpoints
 {
-    public static class PeopleApi
+    public static class StaffApi
     {
-        public static void ConfigurePeopleApi(this WebApplication app)
+        public static void ConfigureStaffApi(this WebApplication app)
         {
-            app.MapGet("/people", GetUsers);
-            app.MapGet("/people/{id}", GetUser);
-            app.MapPost("/people", InsertUser);
-            app.MapPut("/people", UpdateUser);
-            app.MapDelete("/people", DeleteUser);
+            app.MapGet("/staff", GetUsers);
+            app.MapGet("/staff/{id}", GetUser);
+            app.MapPost("/staff", InsertUser);
+            app.MapPut("/staff", UpdateUser);
+            app.MapDelete("/staff", DeleteUser);
         }
         private static async Task<IResult> GetUsers(IPersonDataService service)
         {
@@ -44,7 +43,7 @@ namespace webapi.Endpoints
         {
             try
             {
-                if(service.Add(person)) return Results.Ok();
+                if (service.Add(person)) return Results.Ok();
                 return Results.NotFound();
 
             }
@@ -57,7 +56,7 @@ namespace webapi.Endpoints
         {
             try
             {
-                if(service.UpdateUser(person)) return Results.Ok();
+                if (service.UpdateUser(person)) return Results.Ok();
                 return Results.NotFound();
 
             }
