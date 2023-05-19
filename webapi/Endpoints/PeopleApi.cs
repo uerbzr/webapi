@@ -19,7 +19,9 @@ namespace webapi.Endpoints
         {
             try
             {
-                return Results.Ok(service.GetAll());
+                return await Task.Run(() => { 
+                    return Results.Ok(service.GetAll());
+                });
             }
             catch (Exception ex)
             {
@@ -30,9 +32,12 @@ namespace webapi.Endpoints
         {
             try
             {
-                var person = service.GetAll().Where(x => x.Id == id).FirstOrDefault();
-                if (person == null) return Results.NotFound();
-                return Results.Ok(person);
+                return await Task.Run(() =>
+                {
+                    var person = service.GetAll().Where(x => x.Id == id).FirstOrDefault();
+                    if (person == null) return Results.NotFound();
+                    return Results.Ok(person);
+                });
 
             }
             catch (Exception ex)
@@ -57,8 +62,11 @@ namespace webapi.Endpoints
         {
             try
             {
-                if(service.UpdateUser(person)) return Results.Ok();
-                return Results.NotFound();
+                return await Task.Run(() =>
+                {
+                    if(service.UpdateUser(person)) return Results.Ok();
+                    return Results.NotFound();
+                });
 
             }
             catch (Exception ex)
