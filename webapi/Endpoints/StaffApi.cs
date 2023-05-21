@@ -62,9 +62,10 @@ namespace webapi.Endpoints
         {
             try
             {
-
-                if (service.UpdateUser(person)) return Results.Ok();
-                return Results.NotFound();
+                return await Task.Run(() => { 
+                    if (service.UpdateUser(person)) return Results.Ok();
+                    return Results.NotFound();
+                });
 
             }
             catch (Exception ex)
@@ -76,6 +77,7 @@ namespace webapi.Endpoints
         {
             try
             {
+
                 if (service.DeleteUser(id)) return Results.Ok();
                 return Results.NotFound();
 
