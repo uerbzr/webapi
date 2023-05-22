@@ -48,7 +48,6 @@ GET https://localhost:7084/Users
 
 ###
 POST https://localhost:7084/Users
-
 Content-Type: application/json
 
 {
