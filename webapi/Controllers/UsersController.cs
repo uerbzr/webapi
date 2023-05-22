@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using webapi.Data.Services;
+using webapi.Models;
 
 namespace webapi.Controllers
 {
@@ -17,6 +18,7 @@ namespace webapi.Controllers
         [HttpGet]
         public async Task<IResult> Get()
         {
+           
             try
             {
                 return Results.Ok(_service.GetAll());
@@ -51,6 +53,21 @@ namespace webapi.Controllers
             try
             {
                 if (_service.DeleteUser(id)) return Results.Ok();
+                return Results.NotFound();
+
+            }
+            catch (Exception ex)
+            {
+                return Results.Problem(ex.Message);
+            }
+        }
+        [Route("")]
+        [HttpPost]
+        public async Task<IResult> AddUser(Person person)
+        {
+            try
+            {
+                if (_service.Add(person)) return Results.Ok();
                 return Results.NotFound();
 
             }

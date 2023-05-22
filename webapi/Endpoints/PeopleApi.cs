@@ -47,6 +47,7 @@ namespace webapi.Endpoints
         }
         private static async Task<IResult> InsertUser(Person person, IPersonDataService service)
         {
+          
             try
             {
                 if(service.Add(person)) return Results.Ok();

@@ -41,3 +41,18 @@ Content-Type application/json
 {
     "Id": 1
 }
+
+###
+
+GET https://localhost:7084/Users
+
+###
+POST https://localhost:7084/Users
+
+Content-Type: application/json
+
+{
+    "Id": 100,
+    "Name": "Ada Lovelace",
+    "Email": "ada@lovelace.com"
+}

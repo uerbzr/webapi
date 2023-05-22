@@ -14,8 +14,8 @@ namespace webapi.Data.Services
 
         public bool Add(IPerson person)
         {
-            if (_db.People.Any(p => p.Id == person.Id)) return false;            
-
+            if (_db.People.Any(p => p.Id == person.Id)) return false;
+            person.Id = _db.People.Max(a => a.Id) + 1;
             if (person != null)
             {
 
