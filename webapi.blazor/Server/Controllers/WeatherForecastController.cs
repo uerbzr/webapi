@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using webapi.blazor.Shared;
 
-namespace webapi.Controllers
+namespace webapi.blazor.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -9,7 +10,7 @@ namespace webapi.Controllers
         private static readonly string[] Summaries = new[]
         {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+    };
 
         private readonly ILogger<WeatherForecastController> _logger;
 
@@ -18,7 +19,7 @@ namespace webapi.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
+        [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast

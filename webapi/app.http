@@ -43,9 +43,7 @@ Content-Type application/json
 }
 
 ###
-
 GET https://localhost:7084/Users
-
 ###
 POST https://localhost:7084/Users
 Content-Type: application/json
@@ -55,3 +53,24 @@ Content-Type: application/json
     "Name": "Ada Lovelace",
     "Email": "ada@lovelace.com"
 }
+
+
+
+###
+GET https://localhost:7084/ToDoItem
+###
+POST https://localhost:7084/ToDoItem?todoitem=do%20the%20dishes
+###
+DELETE https://localhost:7084/ToDoItem
+###
+###
+PUT https://localhost:7084/ToDoItem
+###
+
+Content-Type: application/json
+
+[
+  "Feed cat"
+]
+
+

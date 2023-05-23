@@ -1,0 +1,64 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<PageTitle>People</PageTitle>
+
+<h1>People</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (people == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in people)
+            {
+                <tr>
+                    <td>@person.Id</td>
+                    <td>@person.Name</td>
+                    <td>@person.Email</td>
+   
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Person[]? people;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("sample-data/weather.json");
+        people = await Http.GetFromJsonAsync<Person[]>("https://localhost:7084/people");
+
+    }
+
+    public class WeatherForecast
+    {
+        public DateOnly Date { get; set; }
+
+        public int TemperatureC { get; set; }
+
+        public string? Summary { get; set; }
+
+        public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    }
+    public class Person 
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+    }
+}
