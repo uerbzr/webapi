@@ -5,9 +5,13 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi", "webapi\webapi.csproj", "{78015A12-E399-413B-BF51-729945A61F65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapi.www", "webapi.www\webapi.www.csproj", "{8BAEDB39-6B62-410E-8D97-473AB2879187}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi.www", "webapi.www\webapi.www.csproj", "{8BAEDB39-6B62-410E-8D97-473AB2879187}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapi.wwwblazor", "webapi.wwwblazor\webapi.wwwblazor.csproj", "{FEBB4233-7B7D-47DF-8A62-7CB43FAEE355}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "webapi.wwwblazor", "webapi.wwwblazor\webapi.wwwblazor.csproj", "{FEBB4233-7B7D-47DF-8A62-7CB43FAEE355}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapi.models", "webapi.models\webapi.models.csproj", "{EA2E1DC6-C8D1-4BD6-9FC4-774E45D5C79F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webapi.models.interfaces", "webapi.models.interfaces\webapi.models.interfaces.csproj", "{5288D6BD-F767-4182-A5F0-894D0A39A5C6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +31,14 @@ Global
 		{FEBB4233-7B7D-47DF-8A62-7CB43FAEE355}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEBB4233-7B7D-47DF-8A62-7CB43FAEE355}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEBB4233-7B7D-47DF-8A62-7CB43FAEE355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA2E1DC6-C8D1-4BD6-9FC4-774E45D5C79F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA2E1DC6-C8D1-4BD6-9FC4-774E45D5C79F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA2E1DC6-C8D1-4BD6-9FC4-774E45D5C79F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA2E1DC6-C8D1-4BD6-9FC4-774E45D5C79F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5288D6BD-F767-4182-A5F0-894D0A39A5C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5288D6BD-F767-4182-A5F0-894D0A39A5C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5288D6BD-F767-4182-A5F0-894D0A39A5C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5288D6BD-F767-4182-A5F0-894D0A39A5C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
