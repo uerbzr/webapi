@@ -1,7 +1,6 @@
 using webapi.Data.DataStore;
 using webapi.Data.Services;
 using webapi.Endpoints;
-using webapi.Interfaces;
 using webapi.Models;
 
 var builder = WebApplication.CreateBuilder(args);

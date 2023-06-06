@@ -1,12 +1,13 @@
-﻿using webapi.Interfaces;
+﻿
+using webapi.Models;
 
 namespace webapi.Data.Services
 {
     public interface IPersonDataService
     {
-        bool Add(IPerson person);
-        IEnumerable<IPerson> GetAll();
-        bool UpdateUser(IPerson person);
+        bool Add(Person person);
+        IEnumerable<Person> GetAll();
+        bool UpdateUser(Person person);
         bool DeleteUser(int id);
     }
 }

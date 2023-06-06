@@ -1,6 +1,6 @@
 ﻿using webapi.Data;
 using webapi.Data.DataStore;
-using webapi.Interfaces;
+using webapi.Models;
 
 namespace webapi.Data.Services
 {
@@ -12,7 +12,7 @@ namespace webapi.Data.Services
             _db = db;
         }
 
-        public bool Add(IPerson person)
+        public bool Add(Person person)
         {
             if (_db.People.Any(p => p.Id == person.Id)) return false;
             person.Id = _db.People.Count>0 ? _db.People.Max(a => a.Id) + 1 : 1;
@@ -24,11 +24,11 @@ namespace webapi.Data.Services
             }
             return false;
         }
-        public IEnumerable<IPerson> GetAll()
+        public IEnumerable<Person> GetAll()
         {
             return _db.People;
         }
-        public bool UpdateUser(IPerson person)
+        public bool UpdateUser(Person person)
         {
             var index = _db.People.FindIndex(x => x.Id == person.Id);
             var p = _db.People.ElementAt(index);

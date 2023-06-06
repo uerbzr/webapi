@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Http.HttpResults;
+using Microsoft.AspNetCore.Mvc;
 using webapi.Data.Services;
-using webapi.Interfaces;
 using webapi.Models;
 
 namespace webapi.Endpoints
@@ -16,12 +17,13 @@ namespace webapi.Endpoints
             app.MapDelete("/people", DeleteUser);
         }
         private static async Task<IResult> GetUsers(IPersonDataService service)
+        
         {
             try
             {
-                return await Task.Run(() => { 
+      
                     return Results.Ok(service.GetAll());
-                });
+               
             }
             catch (Exception ex)
             {
@@ -47,7 +49,7 @@ namespace webapi.Endpoints
         }
         private static async Task<IResult> InsertUser(Person person, IPersonDataService service)
         {
-          
+                           
             try
             {
                 if(service.Add(person)) return Results.Ok();
